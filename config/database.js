@@ -5,7 +5,7 @@ let url = process.env.URI_MONGO
 async function coneccionBaseDeDatos() {
 
     try {
-        await mongoose.connect(process.env.URI_MONGO)
+        await mongoose.connect(url)
         console.log("base conectada")
     
     }catch(error) {
