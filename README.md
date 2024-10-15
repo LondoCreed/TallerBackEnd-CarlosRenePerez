@@ -13,31 +13,6 @@ Este proyecto es un servidor backend creado con Node.js, Express y MongoDB, que 
 - **Morgan** para registrar peticiones
 - **CORS** habilitado
 
-## Estructura del Proyecto
-
-```
-backend-carlosperez/
-│
-├── config/
-│   └── database.js          # Configuración de conexión a MongoDB
-├── controllers/
-│   ├── empleado/            # Controladores para empleados
-│   ├── producto/            # Controladores para productos
-│   └── tienda/              # Controladores para tiendas
-├── models/
-│   ├── empleado.js          # Modelo de datos para empleados
-│   ├── producto.js          # Modelo de datos para productos
-│   └── tienda.js            # Modelo de datos para tiendas
-├── router/
-│   ├── empleado.js          # Rutas para empleados
-│   ├── producto.js          # Rutas para productos
-│   └── tienda.js            # Rutas para tiendas
-├── server.js                # Archivo principal del servidor
-├── .env                     # Variables de entorno (URI de MongoDB, puerto, etc.)
-├── package.json             # Dependencias y scripts del proyecto
-└── README.md                # Documentación del proyecto
-```
-
 ## Requisitos previos
 
 Asegúrate de tener instalados los siguientes programas:
@@ -50,13 +25,13 @@ Asegúrate de tener instalados los siguientes programas:
 1. Clona este repositorio:
 
    ```bash
-   git clone https://github.com/tu-usuario/backend-carlosperez.git
+   git clone https://github.com/LondoCreed/TallerBackEnd-CarlosRenePerez.git
    ```
 
 2. Navega al directorio del proyecto:
 
    ```bash
-   cd backend-carlosperez
+   cd TallerBackEnd-CarlosRenePerez
    ```
 
 3. Instala las dependencias:
@@ -121,13 +96,13 @@ GET http://localhost:8080/api/tiendas/nombre/Tienda%20A
 ### Filtrar productos por marca
 
 ```bash
-GET http://localhost:8080/api/productos/marca/Nike
+GET http://localhost:8080/api/productos/marca/ByteBook
 ```
 
 ### Filtrar empleados por cargo
 
 ```bash
-GET http://localhost:8080/api/empleados/cargo/Manager
+GET http://localhost:8080/api/empleados/cargo/Cajero
 ```
 
 ## Scripts de datos
