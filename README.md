@@ -89,7 +89,20 @@ Este proyecto es un servidor backend creado con Node.js, Express y MongoDB, que 
 >
 >### Consultar todas las tiendas
 >
->GET http://localhost:8080/api/tiendas/todos
+>**Request:**
+>GET `http://localhost:8080/api/tiendas/todos`
+>
+>**Response:**
+>```json
+>[
+>  {
+>    "id": "1",
+>    "nombre": "Tienda A",
+>    "direccion": "Calle 123"
+>  },
+>  ...
+>]
+>```
 >
 >### Buscar una tienda por nombre
 >
@@ -111,15 +124,15 @@ Este proyecto es un servidor backend creado con Node.js, Express y MongoDB, que 
 >
 >- **Insertar tiendas de ejemplo**:
 >
->  npm run dataTiendas
+>     - npm run dataTiendas
 >
 >- **Insertar productos de ejemplo**:
 >
-> npm run dataProductos
+>    - npm run dataProductos
 >
 >- **Insertar empleados de ejemplo**:
 >
->  npm run dataEmpleados
+>    - npm run dataEmpleados
 
 >[!NOTE]
 >## Contribución
