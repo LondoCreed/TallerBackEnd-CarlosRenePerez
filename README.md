@@ -38,12 +38,14 @@ Este proyecto es un servidor backend creado con Node.js, Express y MongoDB, que 
 
 3. Instala las dependencias:
 
+   ```bash
    npm install
 
-{si la primera no llega a funcionar, las dependencias exactas son las siguientes(usar solo sino funciona lo primero)
+   {si la primera no llega a funcionar, las dependencias exactas son las siguientes(usar solo sino funciona lo primero)
 
    npm install express mongoose dotenv
    npm install --save-dev nodemon}
+   ```
 
 4. Crea un archivo `.env` en la raíz del proyecto y agrega las siguientes variables:
 
@@ -123,16 +125,18 @@ Este proyecto es un servidor backend creado con Node.js, Express y MongoDB, que 
 >Para insertar datos de prueba en tu base de datos, puedes usar los siguientes comandos:
 >
 >- **Insertar tiendas de ejemplo**:
->
+>     ```bash
 >     - npm run dataTiendas
->
+>     ```
 >- **Insertar productos de ejemplo**:
->
+>    ```bash
 >    - npm run dataProductos
->
+>    ```
 >- **Insertar empleados de ejemplo**:
->
+>    ```bash
 >    - npm run dataEmpleados
+>    ```
+
 
 >[!NOTE]
 >## Contribución
