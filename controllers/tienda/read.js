@@ -7,7 +7,7 @@ let todasLasTiendas = async (req, res) => {
        response: tiendas 
       })
     } catch (error) { 
-      next(error) //maneja el error 500 con el middleware error_handler
+      next(error)
     }
 }
 
@@ -19,7 +19,7 @@ let tiendaPorNombre = async (req, res) => {
       response: tienda 
     })
   } catch (error) { 
-    next(error) //maneja el error 500 con el middleware error_handler
+    next(error) 
   }
 }
 
@@ -31,7 +31,7 @@ let tiendaPorDireccion = async (req, res) => {
        response: tienda 
       })
     } catch (error) { 
-      next(error) //maneja el error 500 con el middleware error_handler
+      next(error)
     }
 }
 

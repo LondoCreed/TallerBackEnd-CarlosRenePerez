@@ -22,7 +22,7 @@ let crearTiendas = async (req, res) => {
         response: all,
       })
     } catch (error) { 
-      next(error) //maneja el error 500 con el middleware error_handler
+      next(error)
     }
   }
   

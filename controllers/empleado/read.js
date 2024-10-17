@@ -7,7 +7,7 @@ let todosLosEmpleados = async (req, res) => {
       response: empleados 
     })
   } catch (error) { 
-    next(error) //maneja el error 500 con el middleware error_handler
+    next(error)
   }
 }
 
@@ -20,7 +20,7 @@ let empleadosPorCargo = async (req, res) => {
     })
 
   } catch (error) { 
-    next(error) //maneja el error 500 con el middleware error_handler
+    next(error) 
   }
 
 }
@@ -34,7 +34,7 @@ let empleadosPorSalario = async (req, res) => {
     })
 
   } catch (error) { 
-    next(error) //maneja el error 500 con el middleware error_handler
+    next(error) 
   }
 
 }

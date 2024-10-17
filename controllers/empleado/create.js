@@ -10,7 +10,7 @@ let crearEmpleado = async (req, res, next) => {
       response: all 
     })
   } catch (error) { 
-    next(error) //maneja el error 500 con el middleware error_handler
+    next(error)
   }
 }
 
@@ -23,7 +23,7 @@ let crearEmpleados = async (req, res) => {
         response: all,
       })
     } catch (error) { 
-      next(error) //maneja el error 500 con el middleware error_handler
+      next(error)
     }
   }
 

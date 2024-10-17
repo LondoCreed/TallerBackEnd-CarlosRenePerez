@@ -7,7 +7,7 @@ let todosLosProductos = async (req, res) => {
       response: productos 
     })
   } catch (error) { 
-    next(error) //maneja el error 500 con el middleware error_handler
+    next(error)
   }
 }
 
@@ -19,7 +19,7 @@ let productosPorMarca = async (req, res) => {
       response: productos 
     })
   } catch (error) { 
-    next(error) //maneja el error 500 con el middleware error_handler
+    next(error) 
   }
 }
 
@@ -31,7 +31,7 @@ let productosPorPrecio = async (req, res) => {
       response: productos 
     })
   } catch (error) { 
-    next(error) //maneja el error 500 con el middleware error_handler
+    next(error) 
   }
 }
 

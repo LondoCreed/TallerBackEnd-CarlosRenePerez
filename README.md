@@ -36,9 +36,12 @@ Asegúrate de tener instalados los siguientes programas:
 
 3. Instala las dependencias:
 
-   ```bash
    npm install
-   ```
+
+{si la primera no llega a funcionar, las dependencias exactas son las siguientes(usar solo sino funciona lo primero)
+
+   npm install express mongoose dotenv
+   npm install --save-dev nodemon}
 
 4. Crea un archivo `.env` en la raíz del proyecto y agrega las siguientes variables:
 
@@ -63,19 +66,19 @@ Asegúrate de tener instalados los siguientes programas:
 
 ### Tiendas
 
-- **GET /api/tiendas/all**: Devuelve todas las tiendas.
+- **GET /api/tiendas/todos**: Devuelve todas las tiendas.
 - **GET /api/tiendas/nombre/:nombre**: Devuelve las tiendas filtradas por nombre.
 - **GET /api/tiendas/direccion/:direccion**: Devuelve las tiendas filtradas por dirección.
 
 ### Productos
 
-- **GET /api/productos/all**: Devuelve todos los productos.
+- **GET /api/productos/todos**: Devuelve todos los productos.
 - **GET /api/productos/marca/:marca**: Devuelve los productos filtrados por marca.
 - **GET /api/productos/precio/:precio**: Devuelve los productos filtrados por precio.
 
 ### Empleados
 
-- **GET /api/empleados/all**: Devuelve todos los empleados.
+- **GET /api/empleados/todos**: Devuelve todos los empleados.
 - **GET /api/empleados/cargo/:cargo**: Devuelve los empleados filtrados por cargo.
 - **GET /api/empleados/salario/:salario**: Devuelve los empleados filtrados por salario.
 
@@ -84,7 +87,7 @@ Asegúrate de tener instalados los siguientes programas:
 ### Consultar todas las tiendas
 
 ```bash
-GET http://localhost:8080/api/tiendas/all
+GET http://localhost:8080/api/tiendas/todos
 ```
 
 ### Buscar una tienda por nombre
