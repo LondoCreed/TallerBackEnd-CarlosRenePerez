@@ -13,12 +13,14 @@ Este proyecto es un servidor backend creado con Node.js, Express y MongoDB, que 
 - **Morgan** para registrar peticiones
 - **CORS** habilitado
 
-## Requisitos previos
-
-Asegúrate de tener instalados los siguientes programas:
-
-- **Node.js** (v14+)
-- **MongoDB** (puede ser una instancia local o remota)
+>[!IMPORTANT]
+>
+>## Requisitos previos
+>
+>Asegúrate de tener instalados los siguientes programas:
+>
+>- **Node.js** (v14+)
+>- **MongoDB** (puede ser una instancia local o remota)
   
 ## Instalación
 
@@ -61,81 +63,71 @@ Asegúrate de tener instalados los siguientes programas:
    ```bash
    npm start
    ```
+>[!NOTE]
+>## Endpoints
+>
+>### Tiendas
+>
+>- **GET /api/tiendas/todos**: Devuelve todas las tiendas.
+>- **GET /api/tiendas/nombre/:nombre**: Devuelve las tiendas filtradas por nombre.
+>- **GET /api/tiendas/direccion/:direccion**: Devuelve las tiendas filtradas por dirección.
+>
+>### Productos
+>
+>- **GET /api/productos/todos**: Devuelve todos los productos.
+>- **GET /api/productos/marca/:marca**: Devuelve los productos filtrados por marca.
+>- **GET /api/productos/precio/:precio**: Devuelve los productos filtrados por precio.
+>
+>### Empleados
+>
+>- **GET /api/empleados/todos**: Devuelve todos los empleados.
+>- **GET /api/empleados/cargo/:cargo**: Devuelve los empleados filtrados por cargo.
+>- **GET /api/empleados/salario/:salario**: Devuelve los empleados filtrados por salario.
 
-## Endpoints
+>[!TIP]
+>## Ejemplos de uso
+>
+>### Consultar todas las tiendas
+>
+>GET http://localhost:8080/api/tiendas/todos
+>
+>### Buscar una tienda por nombre
+>
+>GET http://localhost:8080/api/tiendas/nombre/Tienda%20A
+>
+>### Filtrar productos por marca
+>
+>GET http://localhost:8080/api/productos/marca/ByteBook
+>
+>### Filtrar empleados por cargo
+>
+>GET http://localhost:8080/api/empleados/cargo/Cajero
 
-### Tiendas
+>[!WARNING]
+>Las siguientes modificaran las bases de datos existentes, por lo que debes tener cuidado antes de ejecutar los comandos.
+>## Scripts de datos
+>
+>Para insertar datos de prueba en tu base de datos, puedes usar los siguientes comandos:
+>
+>- **Insertar tiendas de ejemplo**:
+>
+>  npm run dataTiendas
+>
+>- **Insertar productos de ejemplo**:
+>
+> npm run dataProductos
+>
+>- **Insertar empleados de ejemplo**:
+>
+>  npm run dataEmpleados
 
-- **GET /api/tiendas/todos**: Devuelve todas las tiendas.
-- **GET /api/tiendas/nombre/:nombre**: Devuelve las tiendas filtradas por nombre.
-- **GET /api/tiendas/direccion/:direccion**: Devuelve las tiendas filtradas por dirección.
-
-### Productos
-
-- **GET /api/productos/todos**: Devuelve todos los productos.
-- **GET /api/productos/marca/:marca**: Devuelve los productos filtrados por marca.
-- **GET /api/productos/precio/:precio**: Devuelve los productos filtrados por precio.
-
-### Empleados
-
-- **GET /api/empleados/todos**: Devuelve todos los empleados.
-- **GET /api/empleados/cargo/:cargo**: Devuelve los empleados filtrados por cargo.
-- **GET /api/empleados/salario/:salario**: Devuelve los empleados filtrados por salario.
-
-## Ejemplos de uso
-
-### Consultar todas las tiendas
-
-```bash
-GET http://localhost:8080/api/tiendas/todos
-```
-
-### Buscar una tienda por nombre
-
-```bash
-GET http://localhost:8080/api/tiendas/nombre/Tienda%20A
-```
-
-### Filtrar productos por marca
-
-```bash
-GET http://localhost:8080/api/productos/marca/ByteBook
-```
-
-### Filtrar empleados por cargo
-
-```bash
-GET http://localhost:8080/api/empleados/cargo/Cajero
-```
-
-## Scripts de datos
-
-Para insertar datos de prueba en tu base de datos, puedes usar los siguientes comandos:
-
-- **Insertar tiendas de ejemplo**:
-
-  ```bash
-  npm run dataTiendas
-  ```
-
-- **Insertar productos de ejemplo**:
-
-  ```bash
-  npm run dataProductos
-  ```
-
-- **Insertar empleados de ejemplo**:
-
-  ```bash
-  npm run dataEmpleados
-  ```
-
-## Contribución
-
-Si deseas contribuir a este proyecto, por favor sigue estos pasos:
-
-1. Haz un fork del repositorio.
-2. Crea una nueva rama (`git checkout -b feature/nueva-funcionalidad`).
-3. Realiza los cambios y confirma los commits (`git commit -m 'Agrega nueva funcionalidad'`).
-4. Envía un push a la rama (`git push origin feature/nueva-funcionalidad`).
-5. Crea un Pull Request.
+>[!NOTE]
+>## Contribución
+>
+>Si deseas contribuir a este proyecto, por favor sigue estos pasos:
+>
+>1. Haz un fork del repositorio.
+>2. Crea una nueva rama (`git checkout -b feature/nueva-funcionalidad`).
+>3. Realiza los cambios y confirma los commits (`git commit -m 'Agrega nueva funcionalidad'`).
+>4. Envía un push a la rama (`git push origin feature/nueva-funcionalidad`).
+>5. Crea un Pull Request.
