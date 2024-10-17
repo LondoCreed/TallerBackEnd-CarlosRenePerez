@@ -1,6 +1,7 @@
 import Empleado from "../../models/Empleado.js"
 
-let createEmpleado = async (req, res) => {
+
+let crearEmpleado = async (req, res, next) => {
   try {
     let empleado = req.body
     let all = await Empleado.create(empleado)
@@ -8,15 +9,12 @@ let createEmpleado = async (req, res) => {
       message: "Empleado creado exitosamente", 
       response: all 
     })
-  } catch (error) {
-    return res.status(500).json({ 
-      message: "Error al crear empleado",
-      response: error
-    })
+  } catch (error) { 
+    next(error) //maneja el error 500 con el middleware error_handler
   }
 }
 
-let createEmpleados = async (req, res) => {
+let crearEmpleados = async (req, res) => {
     try {
       let empleados = req.body
       let all = await Empleado.insertMany(empleados)
@@ -24,13 +22,12 @@ let createEmpleados = async (req, res) => {
         message: "Empleados creados exitosamente",
         response: all,
       })
-    } catch (error) {
-      return res.status(500).json({
-        message: "Error al crear los empleados",
-        response: error,
-      })
+    } catch (error) { 
+      next(error) //maneja el error 500 con el middleware error_handler
     }
   }
+
   
-  export { createEmpleado, createEmpleados }
+  
+  export { crearEmpleado, crearEmpleados }
 

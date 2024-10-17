@@ -1,19 +1,17 @@
 import Empleado from "../../models/Empleado.js"
 
-let allEmpleados = async (req, res) => {
+let todosLosEmpleados = async (req, res) => {
   try {
     let empleados = await Empleado.find()
     return res.status(200).json({ 
       response: empleados 
     })
-  } catch (error) {
-    return res.status(500).json({ 
-      response: error
-    })
+  } catch (error) { 
+    next(error) //maneja el error 500 con el middleware error_handler
   }
 }
 
-let empleadosByCargo = async (req, res) => {
+let empleadosPorCargo = async (req, res) => {
   try {
     let x = req.params.cargo
     let empleados = await Empleado.find({cargo:x})
@@ -21,15 +19,13 @@ let empleadosByCargo = async (req, res) => {
       response: empleados 
     })
 
-  }catch (error) {
-    return res.status(500).json({ 
-      response: error
-    })
+  } catch (error) { 
+    next(error) //maneja el error 500 con el middleware error_handler
   }
 
 }
 
-let empleadosBySalario = async (req, res) => {
+let empleadosPorSalario = async (req, res) => {
   try {
     let y = req.params.salario
     let empleados = await Empleado.find({salario:y})
@@ -37,14 +33,12 @@ let empleadosBySalario = async (req, res) => {
       response: empleados 
     })
 
-  }catch (error) {
-    return res.status(500).json({ 
-      response: error
-    })
+  } catch (error) { 
+    next(error) //maneja el error 500 con el middleware error_handler
   }
 
 }
 
 
 
-export { allEmpleados, empleadosByCargo, empleadosBySalario }
+export { todosLosEmpleados, empleadosPorCargo, empleadosPorSalario }

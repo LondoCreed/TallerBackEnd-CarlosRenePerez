@@ -1,6 +1,6 @@
 import Tienda from "../../models/Tienda.js"
 
-let createTienda = async (req, res) => {
+let crearTienda = async (req, res) => {
   try {
     let tienda = req.body
     let all = await Tienda.create(tienda)
@@ -8,15 +8,12 @@ let createTienda = async (req, res) => {
       message: "Tienda creada exitosamente", 
       response: all 
     })
-  } catch (error) {
-    return res.status(500).json({ 
-      message: "Error al crear la tienda",
-      response: error
-    })
+  } catch (error) { 
+    next(error) //maneja el error 500 con el middleware error_handler
   }
 }
 
-let createTiendas = async (req, res) => {
+let crearTiendas = async (req, res) => {
     try {
       let tienda = req.body
       let all = await Tienda.insertMany(tienda)
@@ -24,12 +21,9 @@ let createTiendas = async (req, res) => {
         message: "Tiendas creadas exitosamente",
         response: all,
       })
-    } catch (error) {
-      return res.status(500).json({
-        message: "Error al crear las tiendas",
-        response: error,
-      })
+    } catch (error) { 
+      next(error) //maneja el error 500 con el middleware error_handler
     }
   }
   
-  export { createTienda, createTiendas }
+  export { crearTienda, crearTiendas }

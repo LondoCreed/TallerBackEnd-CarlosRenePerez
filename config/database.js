@@ -6,7 +6,7 @@ async function coneccionBaseDeDatos() {
 
     try {
         await mongoose.connect(url)
-        console.log("base conectada")
+        console.log("Base de datos conectada")
     
     }catch(error) {
         console.log(error)

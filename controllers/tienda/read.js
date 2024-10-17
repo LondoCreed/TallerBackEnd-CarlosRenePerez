@@ -1,44 +1,38 @@
 import Tienda from "../../models/Tienda.js"
 
-let allTiendas = async (req, res) => {
+let todasLasTiendas = async (req, res) => {
   try {
     let tiendas = await Tienda.find();
     return res.status(200).json({
        response: tiendas 
       })
-  } catch (error) {
-    return res.status(500).json({
-      response: error.message 
-    })
-  }
+    } catch (error) { 
+      next(error) //maneja el error 500 con el middleware error_handler
+    }
 }
 
-let tiendaByNombre = async (req, res) => {
+let tiendaPorNombre = async (req, res) => {
   try {
     let search = req.params.nombre
     let tienda = await Tienda.find({ nombre:search })
     return res.status(200).json({ 
       response: tienda 
     })
-  } catch (error) {
-    return res.status(500).json({ 
-      response: error 
-    })
+  } catch (error) { 
+    next(error) //maneja el error 500 con el middleware error_handler
   }
 }
 
-let tiendaByDireccion = async (req, res) => {
+let tiendaPorDireccion = async (req, res) => {
   try {
     let search = req.params.direccion
     let tienda = await Tienda.find({direccion: search})
     return res.status(200).json({
        response: tienda 
       })
-  } catch (error) {
-    return res.status(500).json({
-       response: error
-       })
-  }
+    } catch (error) { 
+      next(error) //maneja el error 500 con el middleware error_handler
+    }
 }
 
-export { allTiendas, tiendaByNombre, tiendaByDireccion };
+export { todasLasTiendas, tiendaPorNombre, tiendaPorDireccion };

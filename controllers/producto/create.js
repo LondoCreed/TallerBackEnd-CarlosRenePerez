@@ -1,6 +1,6 @@
 import Producto from "../../models/Producto.js"
 
-let createProducto = async (req, res) => {
+let crearProducto = async (req, res) => {
   try {
     let producto = req.body
     let all = await Producto.create(producto)
@@ -8,15 +8,12 @@ let createProducto = async (req, res) => {
       message: "Producto creado exitosamente", 
       response: all 
     })
-  } catch (error) {
-    return res.status(500).json({ 
-      message: "Error al crear producto",
-      response: error
-    })
+  } catch (error) { 
+    next(error) //maneja el error 500 con el middleware error_handler
   }
 }
 
-let createProductos = async (req, res) => {
+let crearProductos = async (req, res) => {
     try {
       let producto = req.body
       let all = await Producto.insertMany(producto)
@@ -24,12 +21,9 @@ let createProductos = async (req, res) => {
         message: "Productos creados exitosamente",
         response: all,
       })
-    } catch (error) {
-      return res.status(500).json({
-        message: "Error al crear los productos",
-        response: error,
-      })
+    } catch (error) { 
+      next(error) //maneja el error 500 con el middleware error_handler
     }
   }
   
-  export { createProducto, createProductos }
+  export { crearProducto, crearProductos }
