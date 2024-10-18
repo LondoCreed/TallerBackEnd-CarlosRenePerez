@@ -1,6 +1,6 @@
 import Producto from "../../models/Producto.js"
 
-let todosLosProductos = async (req, res) => {
+let todosLosProductos = async (req, res, next) => {
   try {
     let productos = await Producto.find()
     return res.status(200).json({ 
@@ -11,7 +11,7 @@ let todosLosProductos = async (req, res) => {
   }
 }
 
-let productosPorMarca = async (req, res) => {
+let productosPorMarca = async (req, res, next) => {
   try {
     let search = req.params.marca
     let productos = await Producto.find({marca:search})
@@ -23,7 +23,7 @@ let productosPorMarca = async (req, res) => {
   }
 }
 
-let productosPorPrecio = async (req, res) => {
+let productosPorPrecio = async (req, res, next) => {
   try {
     let search = req.params.precio
     let productos = await Producto.find({precio:search})

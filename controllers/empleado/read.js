@@ -1,6 +1,6 @@
 import Empleado from "../../models/Empleado.js"
 
-let todosLosEmpleados = async (req, res) => {
+let todosLosEmpleados = async (req, res, next) => {
   try {
     let empleados = await Empleado.find()
     return res.status(200).json({ 
@@ -11,7 +11,7 @@ let todosLosEmpleados = async (req, res) => {
   }
 }
 
-let empleadosPorCargo = async (req, res) => {
+let empleadosPorCargo = async (req, res, next) => {
   try {
     let x = req.params.cargo
     let empleados = await Empleado.find({cargo:x})
@@ -25,7 +25,7 @@ let empleadosPorCargo = async (req, res) => {
 
 }
 
-let empleadosPorSalario = async (req, res) => {
+let empleadosPorSalario = async (req, res, next) => {
   try {
     let y = req.params.salario
     let empleados = await Empleado.find({salario:y})

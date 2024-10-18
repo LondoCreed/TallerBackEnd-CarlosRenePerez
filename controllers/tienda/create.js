@@ -3,10 +3,10 @@ import Tienda from "../../models/Tienda.js"
 let crearTienda = async (req, res) => {
   try {
     let tienda = req.body
-    let all = await Tienda.create(tienda)
+    let crear = await Tienda.create(tienda)
     return res.status(201).json({
       message: "Tienda creada exitosamente", 
-      response: all 
+      response: crear 
     })
   } catch (error) { 
     next(error) //maneja el error 500 con el middleware error_handler
@@ -16,10 +16,10 @@ let crearTienda = async (req, res) => {
 let crearTiendas = async (req, res) => {
     try {
       let tienda = req.body
-      let all = await Tienda.insertMany(tienda)
+      let crearTiendas = await Tienda.insertMany(tienda)
       return res.status(201).json({
         message: "Tiendas creadas exitosamente",
-        response: all,
+        response: crearTiendas,
       })
     } catch (error) { 
       next(error)

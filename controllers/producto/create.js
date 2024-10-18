@@ -1,25 +1,25 @@
 import Producto from "../../models/Producto.js"
 
-let crearProducto = async (req, res) => {
+let crearProducto = async (req, res, next) => {
   try {
     let producto = req.body
-    let all = await Producto.create(producto)
+    let crear = await Producto.create(producto)
     return res.status(201).json({
       message: "Producto creado exitosamente", 
-      response: all 
+      response: crear 
     })
   } catch (error) { 
     next(error) 
   }
 }
 
-let crearProductos = async (req, res) => {
+let crearProductos = async (req, res, next) => {
     try {
       let producto = req.body
-      let all = await Producto.insertMany(producto)
+      let crearVarios = await Producto.insertMany(producto)
       return res.status(201).json({
         message: "Productos creados exitosamente",
-        response: all,
+        response: crearVarios,
       })
     } catch (error) { 
       next(error) 

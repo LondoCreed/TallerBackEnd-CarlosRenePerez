@@ -10,7 +10,9 @@
   "dev": "nodemon server.js",
   "dataTiendas": "node ./models/data/tiendas.js",
   "dataProductos": "node ./models/data/productos.js",
-  "dataEmpleados": "node ./models/data/empleados.js"
+  "dataEmpleados": "node ./models/data/empleados.js",
+  "dataInventarios": "node ./models/data/inventarios.js",
+  "dataCategorias": "node ./models/data/categorias.js"
 },
   "keywords": [],
   "author": "",

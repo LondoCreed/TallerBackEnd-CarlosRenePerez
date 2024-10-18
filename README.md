@@ -46,13 +46,13 @@ Este proyecto es un servidor backend creado con Node.js, Express y MongoDB, que 
    npm install express mongoose dotenv
    npm install --save-dev nodemon}
    ```
-
-4. Crea un archivo `.env` en la raíz del proyecto y agrega las siguientes variables:
-
-   ```bash
-   PORT=8080
-   URI_MONGO="tu_uri_de_mongo"
-   ```
+>[!CAUTION]
+>4. Crea un archivo `.env` en la raíz del proyecto y agrega las siguientes variables:
+>
+>    ```bash
+>    PORT=8080
+>    URI_MONGO="tu_uri_de_mongo"
+>    ```
 
 5. Inicia el servidor en modo desarrollo:
 
@@ -85,6 +85,19 @@ Este proyecto es un servidor backend creado con Node.js, Express y MongoDB, que 
 >- **GET /api/empleados/todos**: Devuelve todos los empleados.
 >- **GET /api/empleados/cargo/:cargo**: Devuelve los empleados filtrados por cargo.
 >- **GET /api/empleados/salario/:salario**: Devuelve los empleados filtrados por salario.
+>
+>### Categorias
+>
+>- **GET /api/categorias/todos**: Devuelve todas las categorias.
+>- **GET /api/categorias/id/**: Devuelve la categoría filtrada por ID.
+>- **GET /api/categorias/nombre/**: Devuelve la categoría filtrada por nombre.
+>
+>### Inventario
+>
+>- **GET /api/inventario/todos**: Devuelve todos los artículos del inventario.
+>- **GET /api/inventario/tienda/**: Devuelve los artículos filtrados por tienda.
+>- **GET /api/inventario/producto/**: Devuelve los artículos filtrados por producto.
+
 
 >[!TIP]
 >## Ejemplos de uso
@@ -126,15 +139,23 @@ Este proyecto es un servidor backend creado con Node.js, Express y MongoDB, que 
 >
 >- **Insertar tiendas de ejemplo**:
 >     ```bash
->     - npm run dataTiendas
+>     npm run dataTiendas
 >     ```
 >- **Insertar productos de ejemplo**:
 >    ```bash
->    - npm run dataProductos
+>    npm run dataProductos
 >    ```
 >- **Insertar empleados de ejemplo**:
 >    ```bash
->    - npm run dataEmpleados
+>    npm run dataEmpleados
+>    ```
+>- **Insertar categorias de ejemplo**:
+>    ```bash
+>    npm run dataCategorias
+>    ```
+>- **Insertar inventarios de ejemplo**:
+>    ```bash
+>    npm run dataInventarios
 >    ```
 
 
